@@ -37,4 +37,10 @@ public class AuthenticationScreen extends BaseScreen{
         pause(3000);
         return new ContactListScreen(driver);
     }
+
+    public ContactListScreen submitRegistration(){
+        registrationButton.click();
+        pause(3000);
+        return new ContactListScreen(driver);
+    }
 }
