@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import models.Contact;
 import org.openqa.selenium.support.FindBy;
+import org.testng.annotations.Test;
 
 public class AddNewContactScreen extends BaseScreen{
     public AddNewContactScreen(AppiumDriver<MobileElement> driver) {

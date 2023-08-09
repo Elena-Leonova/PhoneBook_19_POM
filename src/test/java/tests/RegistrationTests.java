@@ -12,7 +12,7 @@ import screens.SplashScreen;
 import java.util.Random;
 
 public class RegistrationTests extends AppiumConfig {
-    int i = new Random().nextInt(1000) + 1000;
+    int i = new Random().nextInt(1000) + 1500;
 
     @Test
     public void registrationPositive() {
@@ -28,6 +28,7 @@ public class RegistrationTests extends AppiumConfig {
 
     @Test
     public void registrationPositiveModel() {
+        int i = new Random().nextInt(1000) + 1500;
         Assert.assertTrue(
                 new AuthenticationScreen(driver)
                         .registration(Auth.builder()
@@ -43,7 +44,7 @@ public class RegistrationTests extends AppiumConfig {
     public void registrationNegativeWrongEmail() {
 
         new AuthenticationScreen(driver)
-                .fillEmail("auto" + i + "gmail.com")
+                .fillEmail("auto" +  i + "gmail.com")
                 .fillPassword("Mynameislena1!")
                 .submitRegistrationNegative()
                 .isErrorMessageHasText("{username=must be a well-formed email address}");
