@@ -27,7 +27,7 @@ public class AddNewContactScreen extends BaseScreen{
     MobileElement createBtn;
 
     public AddNewContactScreen fillContactForm(Contact contact){
-        waitElement(inputName, 5);
+        waitElement(inputName, 7);
         type(inputName, contact.getName());
         type(inputLastName, contact.getLastName());
         type(inputEmail, contact.getEmail());
