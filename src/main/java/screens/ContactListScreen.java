@@ -219,12 +219,25 @@ public class ContactListScreen extends BaseScreen {
     }
 
     public boolean isEndList(){
+    String beforeScroll = names.get(names.size() - 1).getText()
+            + " " + phones.get(phones.size() - 1).getText();
 
+        scrollList();
+        String afterScroll = names.get(names.size() - 1).getText()
+                + " " + phones.get(phones.size() - 1).getText();
+        if(beforeScroll.equals(afterScroll)) return true;
         return false;
     }
 
     public ContactListScreen isContactAddedScroll(Contact contact){
-        
+        boolean res = false;
+        while(!res) {
+            boolean checkName = checkContainsText(names, contact.getName());
+            boolean checkPhone = checkContainsText(phones, contact.getPhone());
+                    res = checkName && checkPhone;
+            if(res== false) isEndList();
+        }
+      // Assert.assertTrue(res);
         return this;
     }
 }

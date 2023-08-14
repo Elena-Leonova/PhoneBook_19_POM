@@ -57,7 +57,8 @@ public class AddNewContactTests extends AppiumConfig {
                     .openContactForm()
                     .fillContactForm(contact)
                     .submitContact()
-                    .isContactAdded(contact);
+                    //.isContactAdded(contact);
+                    .isContactAddedScroll(contact);
 
 //            Assert.assertTrue(
 //
